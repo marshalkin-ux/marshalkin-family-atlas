@@ -1,5 +1,8 @@
 (()=>{
 const template=document.querySelector('#editorial-scenes');
+const sources={'manuscript.jpg':'.origins img[alt^="Вертикальная"]','painting.jpg':'.o-painting img','tree-painting.png':'.painted-tree img','war.jpg':'#world-war .revision-figure img'};
+for(const img of template.content.querySelectorAll('img')){const original=document.querySelector(sources[img.dataset.source]);if(original)img.src=original.src}
+
 for(const scene of [...template.content.children]){const target=document.getElementById(scene.dataset.before);if(target)(target.id==='tree'?(target.closest('.atlasTree')||target):target).before(scene)}
 template.remove();
 const progress=document.querySelector('#reading-progress'),scenes=[...document.querySelectorAll('.editorial-scene')],active=new Set(),reduce=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width: 760px)');
