@@ -60,6 +60,8 @@ atlas=atlas.replace('<a href="#sources">','<a href="#yaroslav-family">Семья
 atlas=atlas.replace('<section id="sources"',familio_section()+'<section id="sources"',1)
 atlas=atlas.replace('<a href="#sources">','<a href="#familio-review">Находки Familio</a><a href="#sources">',1)
 atlas=editorial(revise_story(apply_private(atlas)))
+from surname_build import apply as apply_surname
+atlas=apply_surname(atlas)
 private.write_text(atlas,'utf8')
 (out/'index.html').write_text(atlas,'utf8')
 (base/'index.html').write_text(atlas,'utf8')
