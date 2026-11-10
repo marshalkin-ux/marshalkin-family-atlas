@@ -5,6 +5,9 @@ for(const img of template.content.querySelectorAll('img')){const original=docume
 
 for(const scene of [...template.content.children]){const target=document.getElementById(scene.dataset.before);if(target)(target.id==='tree'?(target.closest('.atlasTree')||target):target).before(scene)}
 template.remove();
+document.querySelectorAll('a[href="#ties"]').forEach(a=>a.remove());
+for(const h of document.querySelectorAll('h1,h2,h3,h4')){const walker=document.createTreeWalker(h,NodeFilter.SHOW_TEXT);let n,last;while(n=walker.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/[.]+\s*$/,'')}
+
 const progress=document.querySelector('#reading-progress'),scenes=[...document.querySelectorAll('.editorial-scene')],active=new Set(),reduce=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width: 760px)');
 const observer=new IntersectionObserver(entries=>{for(const e of entries)e.isIntersecting?active.add(e.target):active.delete(e.target);schedule()},{rootMargin:'120px'});scenes.forEach(s=>observer.observe(s));
 let pending=false;function update(){pending=false;const range=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+Math.max(0,Math.min(1,range?scrollY/range:0))+')';for(const scene of active){const img=scene.querySelector('.parallax-image');if(reduce.matches||mobile.matches){img.style.transform='none';continue}const r=scene.getBoundingClientRect(),delta=Math.max(-65,Math.min(65,(innerHeight/2-r.top-r.height/2)*.12));img.style.transform=`translate3d(0,${delta.toFixed(2)}px,0)`}}
