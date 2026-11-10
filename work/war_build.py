@@ -2,6 +2,7 @@ from war_import import *
 from military_stats import section as service_section, biographies
 from familio_enrich import section as familio_section
 from story_revision import apply as revise_story
+from editorial_build import apply as editorial
 from secrets import token_urlsafe,token_bytes
 from hashlib import pbkdf2_hmac
 from base64 import b64encode
@@ -58,7 +59,7 @@ atlas=atlas.replace('<a href="lives">','<a href="lives">')
 atlas=atlas.replace('<a href="#sources">','<a href="#yaroslav-family">Семья Ярослава</a><a href="#sources">',1)
 atlas=atlas.replace('<section id="sources"',familio_section()+'<section id="sources"',1)
 atlas=atlas.replace('<a href="#sources">','<a href="#familio-review">Находки Familio</a><a href="#sources">',1)
-atlas=revise_story(apply_private(atlas))
+atlas=editorial(revise_story(apply_private(atlas)))
 private.write_text(atlas,'utf8')
 (out/'index.html').write_text(atlas,'utf8')
 (base/'index.html').write_text(atlas,'utf8')
