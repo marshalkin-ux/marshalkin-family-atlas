@@ -1,0 +1,12 @@
+outputs/
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.env
+.env.*
+*Пароль*
+*password*.txt
+*secret*
+work/*baseline*
+work/pages-auth.ps1

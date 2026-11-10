@@ -1,0 +1,2 @@
+const {chromium}=require('playwright'),fs=require('fs');(async()=>{let b=await chromium.launch({channel:'chrome',headless:true}),p=await b.newPage();p.on('response',async r=>{if(r.url().includes('/api/'))console.log(r.status(),r.url())});await p.goto('https://familio.org/surnames/82f1f245-5672-45a0-890c-e6710cf61db2');await p.waitForTimeout(3000);await p.getByText('2',{exact:true}).last().click();await p.waitForTimeout(3000);console.log('URL',p.url());fs.writeFileSync('work/familio-dom.html',await p.content());await b.close()})();
+

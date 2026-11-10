@@ -1,0 +1,48 @@
+const fs=require('fs'),{chromium}=require('C:/Users/marsh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const template=fs.readFileSync('work/tree-section.html','utf8');
+const html=fs.readFileSync('outputs/Маршалкины.html','utf8'),people=JSON.parse(html.match(/\[window.people,window.groups,window.fullPeople\]=([^\n]+);/)[1])[0];
+const fullPeople=JSON.parse(fs.readFileSync(process.argv[2]||'work/kin-test-full.json','utf8'));
+(async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+try{const page=await browser.newPage();page.on('pageerror',e=>{throw e});await page.setContent('<meta charset=utf-8><script>window.people='+JSON.stringify(people)+';window.fullPeople='+JSON.stringify(fullPeople)+'</script>'+template+fs.readFileSync('work/cases-section.html','utf8')+fs.readFileSync('work/history-section.html','utf8'));
+const check=(ok,msg)=>{if(!ok)throw Error(msg);console.log(msg)};
+check(await page.locator('#kin-source').inputValue()==='full','full default');
+check(await page.locator('#tree').getAttribute('data-view')==='whole','actual topology is default');
+check(await page.locator('.whole-dot').count()===903,'903 distinct nodes');
+check(await page.locator('.whole-path').count()===fullPeople.reduce((n,p)=>n+p.parents.length,0),'all parent-child links drawn');
+check(await page.locator('.whole-mate').count()===fullPeople.reduce((n,p)=>n+p.spouseIds.length,0)/2,'all couples drawn');
+await page.locator('#kin-whole').screenshot({path:'work/kin-actual-desktop.png'});
+await page.locator('#kin-zoom-in').click();check(await page.locator('#kin-zoom-reset').innerText()==='200 %','zoom works');await page.locator('#kin-zoom-reset').click();
+await page.locator('.whole-head[data-who="full-J104"]').click();
+check(await page.evaluate(()=>selectedPersonId)==='full-J104','David chosen from actual overview');check(await page.locator('#kin-whole-active path').count()>0,'ancestor route highlighted');await page.locator('#kin-whole-return').click();check(await page.locator('#tree').getAttribute('data-view')==='whole','back to full panorama');await page.locator('.whole-head[data-who="full-J104"]').click();
+check(await page.locator('.kin-branch-node').count()===10,'3 children, 6 grandchildren and David visible');
+await page.locator('#kin-stage').screenshot({path:'work/kin-canopy-desktop.png'});
+await page.locator('.kin-branch-node[data-who="full-L105"]').click();
+check(await page.evaluate(()=>selectedPersonId)==='full-L105','click recenters tree');
+check(await page.locator('#kin-branch-pages [data-bpage="1"]').count()===1,'additional children paginated');
+await page.locator('#kin-branch-pages [data-bpage="1"]').click();
+await page.locator('#kin-branch-parent').click();
+check(await page.evaluate(()=>selectedPersonId)==='full-J104','parent button navigates back to David');
+await page.locator('#kin-direction').selectOption('up');
+check(await page.locator('.kin-branch-node[data-who="full-H29"]').count()===1,'ancestors visible');
+await page.locator('#kin-direction').selectOption('down');
+await page.locator('#kin-faint').click();
+check(await page.locator('#kin-pick option').count()===19,'exactly 19 faint cards filterable');
+await page.locator('#kin-faint').click();
+await page.locator('[onclick*="full-P461"]').first().evaluate(b=>{for(let e=b;e;e=e.parentElement){if(e.tagName==='DETAILS')e.open=true}b.click()});
+check(await page.evaluate(()=>selectedPersonId)==='full-P461','case selection');
+check(await page.locator('.kin-card a[href^="#kin-story-"]').count()>0,'biography return link');
+check(await page.locator('#kin-pick option').count()===fullPeople.length,'every full entry searchable');
+check(await page.locator('.kin-group').evaluateAll(g=>g.reduce((a,n)=>a+Number(n.textContent),0))===fullPeople.length,'cluster counts reconcile');
+await page.locator('.kin-overview summary').click();await page.locator('.kin-group').last().click();check(await page.locator('#kin-band button').count()>0,'cluster opens populated list');
+await page.locator('#kin-band [data-who]').first().click();
+await page.evaluate(()=>window.focusPerson('J10'));check(await page.locator('#kin-source').inputValue()==='contacts','external focus switches source');
+await page.locator('#kin-back').click();check(await page.locator('#kin-source').inputValue()==='full','back across sources');
+await page.setViewportSize({width:320,height:640});check(await page.locator('#kin-mobile-groups').isVisible(),'mobile overview visible');let select=page.locator('#kin-mobile-groups select');await select.selectOption({index:4});await page.locator('#kin-mobile-groups [data-group]').first().click();
+console.log(await page.evaluate(()=>[...document.querySelectorAll('#tree *')].filter(n=>n.getBoundingClientRect().right>321&&n.getBoundingClientRect().width>0).map(n=>[n.tagName,n.id,n.getBoundingClientRect().right]).slice(0,12)));check(await page.evaluate(()=>document.getElementById('tree').scrollWidth<=320),'320px layout fits');
+check(await page.evaluate(()=>window.fullPeople.filter((_,i)=>i%20===0).every(p=>window.focusPerson(p.id,false,false))),'cards open across all 703 source rows');
+}finally{await browser.close()}})();
+
+
+
+
+

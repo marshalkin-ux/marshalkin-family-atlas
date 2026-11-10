@@ -1,0 +1,136 @@
+{
+  "auditDate": "2026-11-07",
+  "scope": {
+    "cardsReviewed": 903,
+    "files": [
+      "work/fullPeople.json",
+      "work/groups.json",
+      "work/fullsheet.html",
+      "work/living.xlsx",
+      "work/build.py",
+      "work/assemble.py",
+      "work/cases-section.html",
+      "work/xmind.html",
+      "work/time.html"
+    ],
+    "limitations": [
+      "work/tree.xlsx is not a valid workbook; its comments could not be audited.",
+      "xmind.html/time.html do not supply full source content.",
+      "Profession keyword scan of living.xlsx cell values and comments returned no additional candidates.",
+      "Absence of a profession in these extracts does not establish absence among relatives."
+    ]
+  },
+  "candidates": [
+    {
+      "familyId": "full-V438",
+      "contactId": "L24",
+      "name": "Виктор Фёдорович Маршалкин",
+      "familyBirthDate": "1958-11-16",
+      "category": "Балет",
+      "status": "family_source_only",
+      "facts": [
+        "Артист балета — согласно ранее сохранённому пересказу комментария V438."
+      ],
+      "evidence": [
+        {
+          "file": "work/assemble.py",
+          "quote": "В полном листе V438 указан Виктор, 16.11.1958. Виктор Фёдорович в комментарии называет профессию артиста балета, жену Ирину и детей Анну и Сергея."
+        },
+        {
+          "file": "work/fullPeople.json",
+          "quote": "Виктор 16.11.1958",
+          "field": "raw"
+        }
+      ],
+      "sourceUrls": [
+        "https://docs.google.com/spreadsheets/d/14n7lS3o8zSVWbuaK95yM0je-XB5hIIfXHveCGMlzOJ4/edit#gid=989807506&range=V438"
+      ],
+      "cautions": [
+        "Это сохранённый пересказ комментария, а не проверенная в текущем аудите дословная выписка оригинала.",
+        "Театр, роли, годы работы, награды и публичная известность независимо не установлены.",
+        "Поиск точного ФИО и сочетаний фамилии с балетом не дал независимого подтверждения.",
+        "Совпадающие ФИО в судебных агрегаторах не являются доказательством профессии или личности; не переносить их на семейную карточку."
+      ]
+    },
+    {
+      "familyId": "full-T204",
+      "name": "Михаил Фёдорович Маршалкин",
+      "familyBirthDate": "1942-11-20",
+      "category": "Наука",
+      "status": "possible_match_not_confirmed",
+      "facts": [
+        "В открытой биографии одноимённого человека: доктор химических наук, профессор; преподавал в Пятигорском технологическом институте; был деканом технологического факультета.",
+        "По анкете РАЕ: докторская защита в 1984 году, 107 научных работ на момент составления анкеты, знак «Почётный работник высшего образования РФ»."
+      ],
+      "evidence": [
+        {
+          "file": "work/fullPeople.json",
+          "quote": "Михаил 20.11.1942 (умер)",
+          "field": "raw"
+        },
+        {
+          "file": "work/fullPeople.json",
+          "derived": "Отец карточки T204: Фёдор 1913–1960. Сын V205: Семён 1970."
+        }
+      ],
+      "sourceUrls": [
+        "https://famous-scientists.ru/anketa/marshalkin-mihail-fyodorovich-1015",
+        "https://rae.ru/doklad052008.html",
+        "https://docs.google.com/spreadsheets/d/14n7lS3o8zSVWbuaK95yM0je-XB5hIIfXHveCGMlzOJ4/edit#gid=989807506&range=T204"
+      ],
+      "matchBasis": [
+        "Совпадают фамилия и выводимое из отца отчество.",
+        "Ставропольский контекст совместим."
+      ],
+      "cautions": [
+        "В найденной публичной биографии нет даты рождения; тождество с T204 не доказано.",
+        "РАЕ — Российская академия естествознания; не называть академиком РАН.",
+        "107 работ — историческая цифра анкеты, не современный полный итог.",
+        "Не включать в доказанное число известных родственников без дополнительной семейной или архивной сверки."
+      ]
+    },
+    {
+      "familyId": "full-V205",
+      "name": "Семён Михайлович Маршалкин",
+      "familyBirthYear": 1970,
+      "publicBirthDate": "1970-07-12",
+      "category": "Медицина",
+      "status": "possible_match_not_confirmed",
+      "facts": [
+        "В открытых источниках одноимённый человек — врач и депутат Думы Пятигорска.",
+        "Публикация партийного отделения 2016 года называет его главным врачом городской клинической больницы Пятигорска.",
+        "Публикация Астраханского базового медицинского колледжа называет его заместителем главного врача по поликлинической работе Железноводской городской больницы."
+      ],
+      "evidence": [
+        {
+          "file": "work/fullPeople.json",
+          "quote": "Семен 1970",
+          "field": "raw"
+        },
+        {
+          "file": "work/fullPeople.json",
+          "derived": "Родители карточки V205: Михаил 20.11.1942 и Екатерина."
+        }
+      ],
+      "sourceUrls": [
+        "https://stavropol.er.ru/activity/news/v-pyatigorske-opredelili-kandidatov-ot-partii-v-gorodskuyu-dumu",
+        "https://www.abmk30.ru/2.html?id=483",
+        "https://lib.cust.kmv.ru/media/gazeta/fail/pyatigorskaya-pravda-21-08-109-114.pdf",
+        "https://elections.istra-da.ru/election/58673/",
+        "https://docs.google.com/spreadsheets/d/14n7lS3o8zSVWbuaK95yM0je-XB5hIIfXHveCGMlzOJ4/edit#gid=989807506&range=V205"
+      ],
+      "matchBasis": [
+        "Совпадают фамилия, имя, отчество по отцу и год рождения."
+      ],
+      "cautions": [
+        "Семейная карточка не содержит полной даты рождения и профессии. Сопоставление вероятное, но не доказанное.",
+        "Не приписывать этому человеку современные должности по старым публикациям.",
+        "Публичные сведения не подтверждают автоматически, что профессор Михаил Фёдорович является его отцом."
+      ]
+    }
+  ],
+  "excludedCategories": [
+    "Актёры кино, заслуженные врачи и иные звания без подтверждения не добавлялись."
+  ],
+  "recommendedDisplay": "Разделить «Семейное свидетельство» и «Находки для проверки». Первому соответствует артист балета; врач и профессор — кандидаты с открытыми источниками, требующие подтверждения тождества."
+}

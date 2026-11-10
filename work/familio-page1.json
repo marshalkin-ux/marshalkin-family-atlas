@@ -1,0 +1,967 @@
+{
+  "pager": {
+    "page": 1,
+    "itemsPerPage": 20,
+    "totalItems": 556
+  },
+  "data": [
+    {
+      "settlementEvents": [],
+      "ownerId": "1d7a2e38-ed83-4fa2-abdc-28c10f8a4dd0",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": {
+        "uuid": "0e3f20ab-c84e-43ce-a266-0260a60e815d",
+        "primaryName": "Рига",
+        "additionalNames": [],
+        "mainGeorequisite": {
+          "level1": "Rīga",
+          "level2": null,
+          "year": 2021
+        },
+        "type": "город",
+        "status": "жилой",
+        "coordinate": {
+          "type": "Point",
+          "coordinates": [
+            24.1063,
+            56.9494
+          ]
+        }
+      },
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-08-06T18:44:14+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "aa629d94-5414-44c9-83f5-12a305159796",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Иван",
+      "displayName": "Маршалкин Иван",
+      "originalDisplayName": "Маршалкин Иван",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "1d7a2e38-ed83-4fa2-abdc-28c10f8a4dd0",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": {
+        "uuid": "0e3f20ab-c84e-43ce-a266-0260a60e815d",
+        "primaryName": "Рига",
+        "additionalNames": [],
+        "mainGeorequisite": {
+          "level1": "Rīga",
+          "level2": null,
+          "year": 2021
+        },
+        "type": "город",
+        "status": "жилой",
+        "coordinate": {
+          "type": "Point",
+          "coordinates": [
+            24.1063,
+            56.9494
+          ]
+        }
+      },
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-08-06T18:44:14+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "cd74e598-ccad-483c-9af8-60d77c35f183",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Ада Михайловна",
+      "displayName": "Маршалкина (Червова) Ада Михайловна",
+      "originalDisplayName": "Маршалкина (Червова) Ада Михайловна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1999,
+          "month": 4,
+          "day": 18,
+          "formatted": "18.04.1999",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "18.04.1999"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "52378b1e-ac01-40d8-9dfc-248e351d4778",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-07-08T13:00:10+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "e8632b17-ff86-4637-84f1-467ec491db1c",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Акулина Дмитриевна",
+      "displayName": "Маршалкина (Сидоренко) Акулина Дмитриевна",
+      "originalDisplayName": "Маршалкина (Сидоренко) Акулина Дмитриевна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "52378b1e-ac01-40d8-9dfc-248e351d4778",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-07-08T12:59:48+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "86bbfa98-cee5-4c6f-b2c7-39c5d929f293",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Капитон Иванович",
+      "displayName": "Маршалкин Капитон Иванович",
+      "originalDisplayName": "Маршалкин Капитон Иванович",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "52378b1e-ac01-40d8-9dfc-248e351d4778",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-07-08T12:59:17+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "325a9834-0aed-423e-9d57-976d44b65a2b",
+      "type": "regularPerson",
+      "shortDisplayName": "Гончаренко Валентина Капитоновна",
+      "displayName": "Гончаренко (Маршалкина) Валентина Капитоновна",
+      "originalDisplayName": "Гончаренко (Маршалкина) Валентина Капитоновна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "c2c2d855-eb2e-4cf8-a300-d6c8d9ebe073",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-04-09T18:16:51+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "72a334a2-d1b6-4380-8821-36d6a97d41ab",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Петр Андреевич",
+      "displayName": "Маршалкин Петр Андреевич",
+      "originalDisplayName": "Маршалкин Петр Андреевич",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "julian",
+        "first": {
+          "year": 1699,
+          "month": null,
+          "day": null,
+          "formatted": "1699",
+          "type": "julian"
+        },
+        "second": null,
+        "formatted": "1699 ст."
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": {
+        "contentUrl": "/images/user_files/2141a674-7746-4af6-95a6-fd6606562cc4/persons/16b89c7a-b032-4887-8e56-94f4a159902d.jpg",
+        "thumbnail": "/images/user_files/2141a674-7746-4af6-95a6-fd6606562cc4/persons/16b89c7a-b032-4887-8e56-94f4a159902d.thumb-400x400.jpg"
+      },
+      "biography": "была врачем - по словам папы. \n Данные найдены в интернете. Возможно не верные: Имя Клавдия Герасимовна. г.Баку Октябрьский район. По словам кумавьев б. Вали умерла от туберкулеза. По словам б. Вали умерла от неправильно сделанного аборта.",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-04-04T19:38:28+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "7fe7b195-8f57-4564-b15a-57076c4b9855",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Клавдия Герасимовна",
+      "displayName": "Маршалкина Клавдия Герасимовна",
+      "originalDisplayName": "Маршалкина Клавдия Герасимовна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1945,
+          "month": 3,
+          "day": 1,
+          "formatted": "01.03.1945",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "01.03.1945"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "77fcbbe0-e655-48b5-b3e5-77c779d626bf",
+      "gender": "female",
+      "birthPlace": {
+        "uuid": "d76618ca-7841-4355-aa54-30b94a7a9eb4",
+        "primaryName": "Саввушка",
+        "additionalNames": [],
+        "mainGeorequisite": {
+          "level1": "Алтайский край",
+          "level2": "Змеиногорский муниципальный район",
+          "year": 2019
+        },
+        "type": "село",
+        "status": "жилой",
+        "coordinate": {
+          "type": "Point",
+          "coordinates": [
+            82.146446,
+            51.352718
+          ]
+        }
+      },
+      "deathPlace": {
+        "uuid": "fe05e192-1f0c-4792-a7ca-e4c0ba9adeca",
+        "primaryName": "Колывань",
+        "additionalNames": [],
+        "mainGeorequisite": {
+          "level1": "Алтайский край",
+          "level2": "Курьинский муниципальный район",
+          "year": 2019
+        },
+        "type": "село",
+        "status": "жилой",
+        "coordinate": {
+          "type": "Point",
+          "coordinates": [
+            82.5698186,
+            51.3154469
+          ]
+        }
+      },
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-02-23T05:23:30+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "218544bf-1c10-4a1a-aab2-bab0492c93d2",
+      "type": "regularPerson",
+      "shortDisplayName": "Давыдова Варвара Абросимовна",
+      "displayName": "Давыдова (Маршалкина) Варвара Абросимовна",
+      "originalDisplayName": "Давыдова (Маршалкина) Варвара Абросимовна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1910,
+          "month": 12,
+          "day": 20,
+          "formatted": "20.12.1910",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "20.12.1910"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1979,
+          "month": 10,
+          "day": 8,
+          "formatted": "08.10.1979",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "08.10.1979"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "77fcbbe0-e655-48b5-b3e5-77c779d626bf",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-02-23T05:22:25+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "5a578ea6-f778-4eed-9bd6-5b6f4b523469",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин абросим",
+      "displayName": "Маршалкин абросим",
+      "originalDisplayName": "Маршалкин абросим",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "a5cf4c54-3791-4718-acfa-095e7b8726d0",
+      "gender": "female",
+      "birthPlace": {
+        "uuid": "80beaf9b-382a-4dde-9355-5f4bdb3b99ff",
+        "primaryName": "Пшада",
+        "additionalNames": [],
+        "mainGeorequisite": {
+          "level1": "Краснодарский край",
+          "level2": "город-курорт Геленджик",
+          "year": 2019
+        },
+        "type": "село",
+        "status": "жилой",
+        "coordinate": {
+          "type": "Point",
+          "coordinates": [
+            38.3970477,
+            44.4719226
+          ]
+        }
+      },
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": {
+        "contentUrl": "/images/user_files/a5cf4c54-3791-4718-acfa-095e7b8726d0/persons/03072ccb-b98c-4f7e-ad4f-7d936f2f6ca1.jpg",
+        "thumbnail": "/images/user_files/a5cf4c54-3791-4718-acfa-095e7b8726d0/persons/03072ccb-b98c-4f7e-ad4f-7d936f2f6ca1.thumb-400x400.jpg"
+      },
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2026-01-06T14:10:16+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "82a607e1-6cc4-457e-8142-4430814a5712",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Анна Антоновна",
+      "displayName": "Маршалкина (Кривцунова) Анна Антоновна",
+      "originalDisplayName": "Маршалкина (Кривцунова) Анна Антоновна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1914,
+          "month": 10,
+          "day": 31,
+          "formatted": "31.10.1914",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "31.10.1914"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:16:24+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "a36ce669-281c-4c8e-b7c7-f90361373db1",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Павел Васильевич",
+      "displayName": "Маршалкин Павел Васильевич",
+      "originalDisplayName": "Маршалкин Павел Васильевич",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1925,
+          "month": null,
+          "day": null,
+          "formatted": "1925",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1925"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1972,
+          "month": null,
+          "day": null,
+          "formatted": "1972",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1972"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:16:24+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "e8bb19ed-426b-4ac4-b14a-e001c5a2d49e",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Татьяна Павловна",
+      "displayName": "Маршалкина Татьяна Павловна",
+      "originalDisplayName": "Маршалкина Татьяна Павловна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:16:06+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "ed18646e-3d1f-42e4-bb44-4f0a1c4cd87a",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Владимир Павлович",
+      "displayName": "Маршалкин Владимир Павлович",
+      "originalDisplayName": "Маршалкин Владимир Павлович",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:14:48+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "01171059-4e50-4d1f-8bb7-33b047812003",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Александра Ивановна",
+      "displayName": "Маршалкина Александра Ивановна",
+      "originalDisplayName": "Маршалкина Александра Ивановна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1928,
+          "month": null,
+          "day": null,
+          "formatted": "1928",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1928"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 2006,
+          "month": null,
+          "day": null,
+          "formatted": "2006",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "2006"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:13:51+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "8ab19266-0dac-466e-bed7-2461ab15611a",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Мария Ивановна",
+      "displayName": "Маршалкина Мария Ивановна",
+      "originalDisplayName": "Маршалкина Мария Ивановна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:13:35+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "c157dc94-2f96-4201-886d-a0261ea78130",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Иван Васильевич",
+      "displayName": "Маршалкин Иван Васильевич",
+      "originalDisplayName": "Маршалкин Иван Васильевич",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1906,
+          "month": null,
+          "day": null,
+          "formatted": "1906",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1906"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1938,
+          "month": null,
+          "day": null,
+          "formatted": "1938",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1938"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:13:35+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "dd7e2c4c-76bf-4877-bdb5-e438bc994153",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Варвара Петровна",
+      "displayName": "Маршалкина (Тарасова) Варвара Петровна",
+      "originalDisplayName": "Маршалкина (Тарасова) Варвара Петровна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1907,
+          "month": 12,
+          "day": 17,
+          "formatted": "17.12.1907",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "17.12.1907"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1994,
+          "month": 6,
+          "day": 2,
+          "formatted": "02.06.1994",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "02.06.1994"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "female",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:02:40+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "022f9f19-8bbf-483c-af92-cbb47a48f599",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкина Раиса Семеновна",
+      "displayName": "Маршалкина Раиса Семеновна",
+      "originalDisplayName": "Маршалкина Раиса Семеновна",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T08:02:40+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "bbbf2141-e121-4a6f-958a-40113ac5dc68",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Василий Иванович",
+      "displayName": "Маршалкин Василий Иванович",
+      "originalDisplayName": "Маршалкин Василий Иванович",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1930,
+          "month": null,
+          "day": null,
+          "formatted": "1930",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1930"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 2015,
+          "month": null,
+          "day": null,
+          "formatted": "2015",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "2015"
+      },
+      "hasDeathEvent": true
+    },
+    {
+      "settlementEvents": [],
+      "ownerId": "2141a674-7746-4af6-95a6-fd6606562cc4",
+      "gender": "male",
+      "birthPlace": null,
+      "deathPlace": null,
+      "deathSettlementText": "",
+      "photo": null,
+      "biography": "",
+      "isMine": false,
+      "isMe": false,
+      "canBuildTree": true,
+      "privacyType": "visible_for_all",
+      "updatedAt": "2025-12-12T07:56:01+00:00",
+      "tags": [],
+      "isGrantedToMe": false,
+      "uuid": "c4200757-3f0a-4fe7-b5cf-4f6f661992d6",
+      "type": "regularPerson",
+      "shortDisplayName": "Маршалкин Василий Романович",
+      "displayName": "Маршалкин Василий Романович",
+      "originalDisplayName": "Маршалкин Василий Романович",
+      "birthSettlementText": "",
+      "birthDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": {
+          "year": 1884,
+          "month": null,
+          "day": null,
+          "formatted": "1884",
+          "type": "gregorian"
+        },
+        "second": null,
+        "formatted": "1884"
+      },
+      "deathDate": {
+        "type": "equal",
+        "calendar": "gregorian",
+        "first": null,
+        "second": null,
+        "formatted": "Неизвестно"
+      },
+      "hasDeathEvent": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<style>
+.auditBox{margin-top:22px;border-top:1px solid #ab9d83}.auditBox summary{padding:15px 0;font:24px Georgia;cursor:pointer}.auditControls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.auditControls input{width:90px;padding:6px}.auditControls button,.recordChip,.otherLink{font:inherit;color:#244c3d;background:#fffcf2;border:1px solid #c8bda7;border-radius:4px;padding:4px 8px;cursor:pointer}.auditLine{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid #d7d0c2}.auditLine span{display:flex;align-items:center;flex-wrap:wrap;gap:5px}.recordChip:hover,.otherLink:hover{background:#e4e7d4}.auditLine small{color:#655f51}.recordChip small{color:#805333}.sourceJump{display:block;margin:.6em 0;font-size:13px}.otherLink{margin:5px 0}.auditBox a{color:#345a48}.readingIntro{padding:16px clamp(10px,3vw,32px);border-left:4px solid #9d7345;border-bottom:1px solid #d3cabc;background:#eee8d9;font:clamp(16px,2vw,21px)/1.5 Georgia,serif}.readingIntro a{color:#244c3d;text-decoration-thickness:1px;text-underline-offset:3px}
+</style><script>
+(()=>{
+const big=window.fullPeople, short=window.people, cards=new Map([...big,...short].map(p=>[p.id,p]));
+let lastTimeline='';
+window.timelineSearch=function(button,name){
+ const panel=document.querySelector('#tree'),sel=document.getElementById('kin-source');
+ if(sel.value!=='full'){sel.value='full';sel.dispatchEvent(new Event('change'))}
+ const input=document.getElementById('kin-q');input.value=name.replace(/^!\s*|^Маршалкин\s+/g,'').trim().split(/\s/)[0];input.dispatchEvent(new Event('input'));
+ lastTimeline=button.id;button.closest('details').open=true;
+ let back=document.getElementById('returnTimeline');if(!back){back=document.createElement('a');back.id='returnTimeline';back.className='sourceJump';panel.querySelector('.kin-head').append(back)}
+ back.href='#'+lastTimeline;back.textContent='← Вернуться к записи «'+name+'»';back.onclick=()=>{const el=document.getElementById(lastTimeline);if(el){el.closest('details').open=true;el.focus({preventScroll:true})}};
+ input.scrollIntoView({block:'center'});input.focus({preventScroll:true})
+};
+document.addEventListener('personchange',e=>{
+ const p=e.detail.person, panel=document.querySelector('#kin-focus .kin-card');if(!panel)return;
+ if(p.otherCard){
+ const btn=document.createElement('button');btn.className='otherLink';btn.textContent=p.id.startsWith('full-')?'Та же персона в схеме контактов ↗':'Та же персона в полном древе ↗';btn.onclick=()=>window.focusPerson(p.otherCard);panel.append(btn)}
+ const url=p.id.startsWith('full-')?'https://docs.google.com/spreadsheets/d/14n7lS3o8zSVWbuaK95yM0je-XB5hIIfXHveCGMlzOJ4/edit#gid=989807506&range=':'https://docs.google.com/spreadsheets/d/1QqJwatdg2p079D5OFMalnsTmPq3QiKgHEs8ZNbT1KsE/edit#gid=0&range=';
+ const a=document.createElement('a');a.className='sourceJump';a.textContent='Открыть ячейку '+p.cell+' в источнике ↗';a.href=url+p.cell;panel.append(a);
+});
+const box=document.createElement('details');box.className='auditBox';box.id='sheetAudit';box.innerHTML='<summary>Проверить исходный лист по строкам · 1–704</summary><p>Перейдите к номеру строки. Рядом с каждым именем указан адрес ячейки. У бледных записей есть отдельная пометка.</p><div class="auditControls"><button id="audPrev">← Раньше</button><label>Строка <input type="number" min="1" max="704" value="9" id="audRow"></label><button id="audGo">Перейти</button><button id="audNext">Позже →</button></div><div id="auditResults"></div>';
+document.getElementById('sources').append(box);
+const byrow=new Map();for(const p of big){if(!byrow.has(p.row))byrow.set(p.row,[]);byrow.get(p.row).push(p)}
+const notes={2:'Заголовки поколений от −11 до +1.',290:'R290 · «и др. Умерли в 1957 г.»',323:'T323 · «детей не было»'};const input=box.querySelector('input'),out=box.querySelector('#auditResults');
+function show(r){let start=Math.min(704,Math.max(1,Math.floor(Number(r))||1));input.value=start;out.replaceChildren();for(let i=start;i<Math.min(start+12,705);i++){const line=document.createElement('div');line.className='auditLine';const index=document.createElement('b');index.textContent=i;const items=document.createElement('span');for(const p of byrow.get(i)||[]){const b=document.createElement('button');b.className='recordChip';b.textContent=p.cell+' · '+p.raw+(p.faint?' ◇ бледная запись':'');b.onclick=()=>window.focusPerson(p.id);items.append(b)}if(notes[i]||!items.childNodes.length){const n=document.createElement('small');n.textContent=notes[i]||'Без именной записи';items.append(n)}line.append(index,items);out.append(line)}}
+box.querySelector('#audGo').onclick=()=>show(input.value);input.onkeydown=e=>{if(e.key==='Enter')show(input.value)};box.querySelector('#audPrev').onclick=()=>show(+input.value-12);box.querySelector('#audNext').onclick=()=>show(+input.value+12);show(9);
+const lead=document.createElement('div');lead.className='readingIntro';lead.innerHTML='В <a href="#tree">полном древе</a> собраны 855 именных записей и 48 обозначений родственников без имени. Две заметки ведут из Обояни через Бегичево к Кавказской укреплённой линии. Позднее семейная история разветвляется: её можно проследить через приходские книги, военные документы и рассказы потомков. <a href="#stats">Возраст и случаи в цифрах ↓</a>';
+document.querySelector('#history').prepend(lead);
+})();
+</script>

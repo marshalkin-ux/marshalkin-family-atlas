@@ -1,0 +1,9 @@
+const fs=require('fs'),{chromium}=require('C:/Users/marsh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});try{const page=await browser.newPage({viewport:{width:1360,height:850}});const errs=[];page.on('pageerror',e=>errs.push(e.message));
+const old=fs.readFileSync('outputs/Маршалкины.html','utf8');const match=old.match(/\[window\.people,window\.groups,window\.fullPeople\]\s*=\s*(\[.*?\]);\s*<\/script>/s);
+let html=fs.readFileSync('work/story.html','utf8').replace('{{DATA}}',()=>match[1]);
+for(const [k,f] of Object.entries({TREE:'tree',HISTORY:'history',STATS:'stats',CASES:'cases'}))html=html.replace('{{'+k+'}}',()=>fs.readFileSync('work/'+f+'-section.html','utf8'));
+await page.setContent(html);await page.evaluate(()=>document.fonts.ready);console.log('main first',await page.locator('main').locator(':scope > :first-child #tree').count(),'index',await page.locator('#matches').innerText());
+console.log('font',await page.evaluate(()=>[getComputedStyle(document.querySelector('h1')).fontFamily,...Array.from(document.fonts).map(f=>f.status)]));console.log('visibleGroups',await page.locator('#groups details:visible').count());
+await page.locator('#groupNext').click();console.log('page2',await page.locator('#groupPage').innerText());await page.locator('#tq').fill('Давид');console.log('search',await page.locator('#matches').innerText());
+await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:'work/newmast-test.png'});await page.setViewportSize({width:375,height:810});console.log('mobile',await page.evaluate(()=>[innerWidth,document.documentElement.scrollWidth]),'errors',errs); }finally{await browser.close()}})();

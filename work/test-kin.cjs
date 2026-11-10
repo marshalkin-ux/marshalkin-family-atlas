@@ -1,0 +1,17 @@
+const fs=require('fs'),{chromium}=require('C:/Users/marsh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const template=fs.readFileSync('work/tree-section.html','utf8');
+const html=fs.readFileSync('outputs/Маршалкины.html','utf8'),people=JSON.parse(html.match(/const \[people,groups\]=([^\n]+);/)[1])[0];
+(async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+try{const page=await browser.newPage();page.on('pageerror',e=>{throw e});
+await page.setContent('<meta charset=utf-8><script>window.people='+JSON.stringify(people)+'</script>'+template);
+const check=(ok,msg)=>{if(!ok)throw Error(msg);console.log(msg)};
+check(await page.locator('.kin-node').count()===91,'91 selectable nodes');
+check(await page.locator('.kin-edge').count()===people.reduce((n,p)=>n+p.parents.length,0),'every source link shown');
+await page.locator('#kin-q').fill('Солгалов');await page.locator('#kin-open').click();check(await page.evaluate(()=>selectedPersonId)==='K8','surname search');
+await page.locator('.kin-person').first().click();check(await page.evaluate(()=>selectedPersonId)==='J8','parent link');await page.locator('#kin-back').click();
+check(await page.evaluate(()=>selectedPersonId)==='K8','history');
+await page.evaluate(()=>window.focusPerson('K30b'));check(await page.locator('.kin-person').count()===3,'spouse and two children');
+await page.locator('.kin-node[tabindex="0"]').focus();await page.keyboard.press('ArrowRight');check(await page.evaluate(()=>selectedPersonId)==='L30','keyboard child navigation');
+await page.setViewportSize({width:320,height:640});check(await page.evaluate(()=>document.documentElement.scrollWidth<=320),'320px layout fits');
+check(await page.evaluate(()=>window.people.every(p=>window.focusPerson(p.id))),'all 91 biographies traversable');
+}finally{await browser.close()}})();

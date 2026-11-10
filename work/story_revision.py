@@ -1,0 +1,29 @@
+from pathlib import Path
+from base64 import b64encode
+ROOT=Path(__file__).parent
+def asset(n):
+ p=ROOT/'assets-revision'/n
+ return 'data:image/'+('png' if p.suffix=='.png' else 'jpeg')+';base64,'+b64encode(p.read_bytes()).decode()
+def figure(name,caption):
+ return '<figure class="revision-figure"><img loading="lazy" src="'+asset(name)+'" alt="'+caption+'"><figcaption>'+caption+'</figcaption></figure>'
+def apply(atlas,private=True):
+ import re
+ painting=ROOT/'assets-revision/tree-painting.png'
+ if painting.exists():
+  atlas=re.sub(r'<svg class="heritage-art".*?</svg>','<a class="painted-tree" href="'+('#tree' if private else '#gate')+'"><img src="'+asset('tree-painting.png')+'" alt="Живописное родовое дерево — раскидистый дуб с глубокими корнями"></a>',atlas,count=1,flags=re.S)
+ atlas=atlas.replace('</html>','<style>.painted-tree{display:block;width:100%;align-self:stretch}.painted-tree img{width:100%;height:100%;max-height:680px;object-fit:cover;mix-blend-mode:luminosity;border-radius:44% 44% 4px 4px}.revision-figure{margin:24px 0}.revision-figure img{width:100%;max-height:520px;object-fit:contain;background:#e7dcc5}.revision-figure figcaption{font-size:13px;padding:10px 0;color:#796044}.o-status{grid-template-columns:1fr}.heritage-copy h2{font-size:clamp(40px,5vw,72px)}</style></html>')
+ if not private:
+  return atlas.replace('<h3 id="ww-years">',figure('war.jpg','Великая Отечественная война · иллюстрация эпохи')+'<h3 id="ww-years">',1)
+ atlas=atlas.replace('<h3>Казаки курского пограничья</h3>','<h3>Казаки курского пограничья</h3>'+figure('cossacks.jpg','Казаки · художественное изображение служилой среды'))
+ atlas=atlas.replace('<h3>От служилых людей к однодворцам</h3>','<h3>От служилых людей к однодворцам</h3>'+figure('odnodvorcy.jpg','Однодворцы · иллюстрация из библиотеки «Казачий хутор»')+'<p>В однодворческой среде сочетались служилое происхождение, семейное землевладение и самостоятельное ведение хозяйства. Их история связана с заселением и защитой южных рубежей. <a href="http://library.kazachiy-hutor.ru/stati/odnodvorcy/" target="_blank" rel="noopener">Библиотека «Казачий хутор»</a>.</p>')
+ atlas=atlas.replace('<div class="raid-facts">',figure('raid.jpg','А. А. Козлов. «Подвиг рядового Архипа Осипова» — сюжет 1840 года. Иллюстрация опасностей Кавказского пограничья; изображён другой эпизод, не набег 1785 года.')+'<div class="raid-facts">',1)
+ atlas=atlas.replace('<h3 id="ww-years">',figure('war.jpg','Великая Отечественная война · иллюстрация эпохи')+'<h3 id="ww-years">',1)
+ photo=asset('vasily-1930.jpg')
+ portrait='<figure class="vasily-portrait"><button type="button" onclick="document.getElementById(\'vasily-photo-view\').showModal()" aria-label="Увеличить фотографию Василия Ивановича"><img src="'+photo+'" alt="Василий Иванович Маршалкин, 1930–2015. Фотография из семейного архива"></button><figcaption>Василий Иванович Маршалкин · семейный архив</figcaption></figure>'
+ atlas=atlas.replace('<h3>Василий Иванович Маршалкин</h3>','<h3>Василий Иванович Маршалкин</h3>'+portrait,1)
+ extra='<style>.vasily-portrait{margin:18px 0}.vasily-portrait button{padding:0!important;border:0!important;background:none!important;cursor:zoom-in!important;display:block;width:100%}.vasily-portrait img{display:block;width:100%;max-height:440px;object-fit:contain;background:#d7c5a5}.vasily-portrait figcaption{font-size:12px;margin-top:8px}#vasily-photo-view{padding:15px;background:#2d2118;color:#f5e6c8;border:1px solid #b6975e;max-width:95vw;max-height:95vh}#vasily-photo-view::backdrop{background:#17100ce6}#vasily-photo-view img{display:block;max-width:85vw;max-height:80vh;object-fit:contain}#vasily-photo-view button{padding:8px 15px;margin-bottom:10px}</style><dialog id="vasily-photo-view"><form method="dialog"><button>Закрыть ×</button></form><img src="'+photo+'" alt="Портрет Василия Ивановича"></dialog><template id="vasily-portrait-template">'+portrait+'</template><script>document.addEventListener(\'personchange\',e=>{if(e.detail.id!==\'full-T534\')return;const card=document.querySelector(\'#kin-focus .kin-card\');if(card)card.append(document.querySelector(\'#vasily-portrait-template\').content.cloneNode(true))});</script>'
+ atlas=atlas.replace('</body>',extra+'</body>')
+ mapfile=ROOT/'revision-map.html' 
+ if mapfile.exists():atlas=atlas.replace('<h4>Город на пограничье</h4>','<h4>Город на пограничье</h4>'+mapfile.read_text('utf8'),1)
+ script='''<script>(()=>{const origins=document.querySelector('#origins'),places=document.querySelector('#homelands'),south=document.querySelector('#southward'),events=document.querySelector('#events'),tree=document.querySelector('#tree'),familio=document.querySelector('#familio-review'),war=document.querySelector('#world-war');const map=document.querySelector('.frontier-map'),ob=document.querySelector('#origin-oboyan');if(map&&ob)ob.after(map);if(places&&origins)origins.before(places);if(south&&events)south.after(events);if(tree&&familio){const wrap=tree.closest('.atlasTree')||tree;wrap.after(familio)}if(events&&war){const h=[...events.querySelectorAll('h3')].find(x=>x.textContent.trim()==='Великая Отечественная война');if(h){const box=document.createElement('div');box.className='hx';box.innerHTML='<h3>Семейные судьбы на войне</h3>';let n=h.nextSibling;while(n){const next=n.nextSibling;box.append(n);n=next}h.remove();war.append(box)}}const names=document.querySelector('#names'),long=document.querySelector('#longevity');if(names&&long)long.after(names);const menu=document.querySelector('.chapter-menu');if(menu){const links=[...menu.querySelectorAll('a')];links.sort((a,b)=>{const x=document.querySelector(a.getAttribute('href')),y=document.querySelector(b.getAttribute('href'));return x&&y?(x.compareDocumentPosition(y)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1):0});links.forEach(x=>menu.append(x))}})();</script>'''
+ return atlas.replace('</body>',script+'</body>')
