@@ -18,6 +18,7 @@ for key in ['PAINTING','MAKAR','BROTHERS','MOVE','MANUSCRIPT']:
 
 def section():
     markup = (ROOT / 'origins-section.html').read_text('utf8')
+    markup = markup.replace('<aside class="o-dark" id="origin-cossacks">', (ROOT/'oboyan-life.html').read_text('utf8')+'<aside class="o-dark" id="origin-cossacks">', 1)
     for key, path in ASSETS.items():
         mime = 'image/png' if path.suffix == '.png' else 'image/jpeg'
         markup = markup.replace('{{' + key + '}}', 'data:' + mime + ';base64,' + b64encode(path.read_bytes()).decode())
